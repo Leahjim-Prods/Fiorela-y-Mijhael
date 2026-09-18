@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171011">
+
+  <title>Para Fiorela ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top, #3a2026 0%, #1d1315 38%, #100b0c 100%);
+      color: #fff8f2;
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       PANTALLA INICIAL
+    ========================= */
+
+    #inicio {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(circle at 50% 30%, #4c2830 0%, #201416 45%, #0d090a 100%);
+
+      z-index: 1000;
+      transition:
+        opacity 1s ease,
+        visibility 1s ease;
+    }
+
+    #inicio.oculto {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .inicio-contenido {
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      padding: 30px;
+      animation: aparecer 1.5s ease;
+    }
+
+    .corazon-inicio {
+      font-size: 35px;
+      margin-bottom: 25px;
+      animation: latido 1.5s infinite;
+    }
+
+    .inicio-contenido .pequeno {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #d8a6ad;
+      margin-bottom: 12px;
+    }
+
+    .inicio-contenido h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 13vw, 65px);
+      font-weight: 500;
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    .inicio-contenido p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #d7c8c4;
+      margin-bottom: 35px;
+    }
+
+    .boton {
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: white;
+
+      padding: 15px 30px;
+      border-radius: 100px;
+
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+
+      transition: .3s;
+    }
+
+    .boton:active {
+      transform: scale(.96);
+    }
+
+    /* =========================
+       CONTENIDO
+    ========================= */
+
+    main {
+      width: 100%;
+    }
+
+    section {
+      min-height: 100svh;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 65px 22px;
+      position: relative;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding-top: 90px;
+      background:
+        linear-gradient(to bottom, rgba(14,9,10,.1), #160e10);
+    }
+
+    .fecha {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #cf9ca5;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 25px;
+      line-height: 1;
+    }
+
+    .hero h2 span {
+      font-style: italic;
+      color: #efbdc4;
+    }
+
+    .hero p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      line-height: 1.6;
+      color: #e2d2ce;
+    }
+
+    .flecha {
+      margin-top: 50px;
+      opacity: .5;
+      font-size: 24px;
+      animation: bajar 1.5s infinite;
+    }
+
+    /* =========================
+       FOTOS
+    ========================= */
+
+    .foto-card {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 25px;
+      position: relative;
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+      margin-bottom: 38px;
+    }
+
+    .foto-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .numero {
+      font-family: "Cormorant Garamond", serif;
+      color: #cf929d;
+      font-size: 15px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .texto-momento {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 27px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .texto-momento strong {
+      color: #f2b6c1;
+      font-weight: 500;
+    }
+
+    .momento {
+      background:
+        radial-gradient(circle at center, #2b171b, #130d0e 70%);
+    }
+
+    /* =========================
+       CARTA
+    ========================= */
+
+    .carta-seccion {
+      background: #efe4d8;
+      color: #34272a;
+      padding: 80px 20px;
+    }
+
+    .carta {
+      position: relative;
+      background: #fffaf3;
+      padding: 45px 28px;
+      border-radius: 6px;
+
+      text-align: left;
+
+      box-shadow:
+        0 20px 70px rgba(0,0,0,.3);
+
+      transform: rotate(-1deg);
+    }
+
+    .carta::before {
+      content: "♡";
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      font-size: 27px;
+      color: #b96776;
+    }
+
+    .carta h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    .carta p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .firma {
+      margin-top: 35px;
+      text-align: right;
+      font-size: 22px !important;
+      font-style: italic;
+    }
+
+    /* =========================
+       PREGUNTA FINAL
+    ========================= */
+
+    .pregunta {
+      min-height: 100dvh;
+
+      background:
+        radial-gradient(circle at center, #502630, #1c1013 55%, #0d0809);
+
+      overflow: hidden;
+    }
+
+    .pregunta .mini {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #d49da7;
+      margin-bottom: 22px;
+    }
+
+    .pregunta h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(45px, 13vw, 65px);
+      font-weight: 500;
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .pregunta p {
+      color: #dac7c8;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 35px;
+    }
+
+    .botones-final {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .si {
+      background: #e8a4af;
+      color: #241316;
+      border: none;
+      font-weight: 500;
+    }
+
+    .pensarlo {
+      background: transparent;
+      color: #d8c4c5;
+    }
+
+    /* =========================
+       RESPUESTA
+    ========================= */
+
+    #respuesta {
+      position: fixed;
+      inset: 0;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(circle at center, #69313d, #1b0e11 60%, #090506);
+
+      z-index: 2000;
+      padding: 25px;
+      overflow: hidden;
+    }
+
+    #respuesta.visible {
+      display: flex;
+      animation: aparecer .8s ease;
+    }
+
+    .respuesta-contenido {
+      text-align: center;
+      max-width: 430px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .respuesta-contenido .gran-corazon {
+      font-size: 60px;
+      animation: latido 1.2s infinite;
+      margin-bottom: 25px;
+    }
+
+    .respuesta-contenido h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .respuesta-contenido p {
+      color: #e2cccf;
+      line-height: 1.8;
+    }
+
+    .nombres {
+      margin-top: 35px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 27px !important;
+      color: #f2b6c1 !important;
+    }
+
+    /* =========================
+       ANIMACIÓN SCROLL
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(45px);
+      transition:
+        opacity 1s ease,
+        transform 1s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       CORAZONES
+    ========================= */
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      z-index: 2001;
+      pointer-events: none;
+      animation: volar linear forwards;
+    }
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes latido {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes bajar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    @keyframes volar {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .contenedor {
+        max-width: 500px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PANTALLA INICIAL -->
+
+  <div id="inicio">
+
+    <div class="inicio-contenido">
+
+      <div class="corazon-inicio">♡</div>
+
+      <div class="pequeno">
+        Para alguien especial
+      </div>
+
+      <h1>
+        Fiorela
+      </h1>
+
+      <p>
+        Hay algo que llevo un tiempo queriendo decirte,
+        pero quería hacerlo de una manera un poquito diferente.
+      </p>
+
+      <button class="boton" onclick="abrirPagina()">
+        Abrir esto ♡
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <main>
+
+    <!-- INTRO -->
+
+    <section class="hero">
+
+      <div class="contenedor reveal">
+
+        <div class="fecha">
+          18 · 09 · 2026
+        </div>
+
+        <h2>
+          Quizá todo comenzó<br>
+          <span>sin darme cuenta.</span>
+        </h2>
+
+        <p>
+          Entre conversaciones, risas y pequeños momentos,
+          alguien comenzó a ocupar un lugar especial en mis días.
+        </p>
+
+        <div class="flecha">
+          ↓
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MOMENTO 1 -->
+
+    <section class="momento">
+
+      <div class="contenedor">
+
+        <div class="foto-card reveal">
+          <img src="foto1.png" alt="Mijhael y Fiorela">
+        </div>
+
+        <div class="reveal">
+
+          <div class="numero">
+            01 · ALGO CAMBIÓ
+          </div>
+
+          <p class="texto-momento">
+            No sé exactamente en qué momento pasó,
+            pero empecé a esperar con ganas
+            <strong>la próxima vez que pudiera verte.</strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MOMENTO 2 -->
+
+    <section>
+
+      <div class="contenedor">
+
+        <div class="foto-card reveal">
+          <img src="foto2.png" alt="Un momento especial">
+        </div>
+
+        <div class="reveal">
+
+          <div class="numero">
+            02 · TÚ
+          </div>
+
+          <p class="texto-momento">
+            Me gusta escucharte, conocerte un poquito más
+            y descubrir esas pequeñas cosas
+            <strong>que te hacen ser tú.</strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MOMENTO 3 -->
+
+    <section class="momento">
+
+      <div class="contenedor">
+
+        <div class="foto-card reveal">
+          <img src="foto3.png" alt="Nosotros">
+        </div>
+
+        <div class="reveal">
+
+          <div class="numero">
+            03 · NOSOTROS
+          </div>
+
+          <p class="texto-momento">
+            Y mientras más tiempo pasa,
+            más me doy cuenta de que
+            <strong>quiero seguir creando momentos contigo.</strong>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CARTA -->
+
+    <section class="carta-seccion">
+
+      <div class="contenedor reveal">
+
+        <div class="carta">
+
+          <h3>
+            Fiorela,
+          </h3>
+
+          <p>
+            Tal vez podría haberte dicho todo esto simplemente
+            mirándote a los ojos.
+          </p>
+
+          <p>
+            Pero quería dejarte algo que pudieras guardar y
+            volver a leer algún día.
+          </p>
+
+          <p>
+            Desde que empezamos a conocernos has logrado despertar
+            algo muy bonito en mí.
+          </p>
+
+          <p>
+            Me gusta pasar tiempo contigo, hablar contigo,
+            reír contigo y descubrir poco a poco quién eres.
+          </p>
+
+          <p>
+            No sé exactamente qué nos espera después de hoy,
+            pero hay algo que sí sé:
+          </p>
+
+          <p>
+            <strong>
+              quiero seguir descubriéndolo contigo.
+            </strong>
+          </p>
+
+          <p>
+            Y por eso hoy decidí dejar de guardar
+            una pregunta que llevo conmigo desde hace un tiempo...
+          </p>
+
+          <p class="firma">
+            — Mijhael ♡
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PREGUNTA -->
+
+    <section class="pregunta">
+
+      <div class="contenedor reveal">
+
+        <div class="mini">
+          Y ahora sí...
+        </div>
+
+        <h2>
+          Fiorela,<br>
+          ¿quieres ser<br>
+          mi enamorada? ♡
+        </h2>
+
+        <p>
+          No importa cuánto código haya detrás de esta página,
+          esta pregunta tenía que hacértela yo.
+        </p>
+
+        <div class="botones-final">
+
+          <button class="boton si" onclick="respuestaSi()">
+            Sí, quiero 💗
+          </button>
+
+          <button class="boton pensarlo" onclick="pensarlo()">
+            Déjame pensarlo ♡
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FINAL SI -->
+
+  <div id="respuesta">
+
+    <div class="respuesta-contenido">
+
+      <div class="gran-corazon">
+        💗
+      </div>
+
+      <h2>
+        Entonces...
+        este puede ser nuestro comienzo.
+      </h2>
+
+      <p>
+        Prometo guardar este momento
+        como uno de mis favoritos.
+      </p>
+
+      <p class="nombres">
+        Mijhael + Fiorela
+        <br>
+        18 · 09 · 2026 ♡
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* ABRIR */
+
+    function abrirPagina() {
+
+      document
+        .getElementById("inicio")
+        .classList.add("oculto");
+
+      document.body.style.overflow = "auto";
+
+    }
+
+
+    /* ANIMACIÓN AL BAJAR */
+
+    const elementos = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+
+      });
+
+    }, {
+      threshold: 0.15
+    });
+
+    elementos.forEach(elemento => {
+      observer.observe(elemento);
+    });
+
+
+    /* RESPUESTA SÍ */
+
+    function respuestaSi() {
+
+      const respuesta =
+        document.getElementById("respuesta");
+
+      respuesta.classList.add("visible");
+
+      crearCorazones();
+
+    }
+
+
+    /* RESPUESTA PENSARLO */
+
+    function pensarlo() {
+
+      alert(
+        "Está bien ♡ No tienes que responder ahora. Lo importante para mí era que supieras lo que siento."
+      );
+
+    }
+
+
+    /* CORAZONES */
+
+    function crearCorazones() {
+
+      const corazones = [
+        "♡",
+        "♥",
+        "💗",
+        "♡",
+        "💕"
+      ];
+
+      for (let i = 0; i < 35; i++) {
+
+        setTimeout(() => {
+
+          const heart =
+            document.createElement("div");
+
+          heart.className = "heart";
+
+          heart.innerHTML =
+            corazones[
+              Math.floor(
+                Math.random() * corazones.length
+              )
+            ];
+
+          heart.style.left =
+            Math.random() * 100 + "vw";
+
+          heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+          heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            heart.remove();
+          }, 7000);
+
+        }, i * 100);
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
