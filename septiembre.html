@@ -486,7 +486,39 @@
 
 
   </main>
+<script>
 
+  const musica =
+    document.getElementById("musicaFondo");
+
+  const portada =
+    document.getElementById("portadaSeptiembre");
+
+
+  function abrirPrimavera() {
+
+    /* Volumen: 0 = silencio / 1 = máximo */
+    musica.volume = 0.35;
+
+
+    /* Iniciar música */
+    musica.play();
+
+
+    /* Desaparecer portada */
+    portada.classList.add("oculta");
+
+
+    /* Permitir scroll */
+    document.body.classList.remove("bloqueado");
+
+  }
+
+
+  /* Al cargar la página bloqueamos el scroll */
+  document.body.classList.add("bloqueado");
+
+</script>
 
 </body>
 
