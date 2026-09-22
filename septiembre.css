@@ -1,0 +1,837 @@
+/* ========================================
+   GENERAL
+========================================= */
+
+* {
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  color: #49300f;
+
+  overflow-x: hidden;
+
+  background:
+    #f5d767;
+
+}
+
+
+main {
+
+  position: relative;
+
+  z-index: 5;
+
+}
+
+
+section {
+
+  width: 100%;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    75px
+    22px;
+
+}
+
+
+.contenido {
+
+  width: 100%;
+
+  max-width: 430px;
+
+  text-align: center;
+
+}
+
+
+
+/* ========================================
+   VOLVER
+========================================= */
+
+.volver {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  z-index: 100;
+
+  padding:
+    11px
+    18px;
+
+  border-radius: 100px;
+
+  background:
+    rgba(255, 250, 220, .82);
+
+  border:
+    1px solid
+    rgba(92, 60, 13, .18);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: #62420e;
+
+  text-decoration: none;
+
+  font-size: 12px;
+
+}
+
+
+
+/* ========================================
+   PORTADA
+========================================= */
+
+.portada {
+
+  background:
+
+    radial-gradient(
+      circle at 50% 25%,
+      #fff6bd 0%,
+      #f6dc75 35%,
+      #e5b743 100%
+    );
+
+}
+
+
+.mini {
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+
+  color: #8a5c12;
+
+  margin-bottom: 25px;
+
+}
+
+
+.girasol-principal {
+
+  font-size: 70px;
+
+  margin-bottom: 25px;
+
+  animation:
+    flotar
+    3s
+    ease-in-out
+    infinite;
+
+}
+
+
+.portada h1 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      58px,
+      17vw,
+      80px
+    );
+
+  line-height: .88;
+
+  font-weight: 600;
+
+  color: #50330b;
+
+  margin-bottom: 30px;
+
+}
+
+
+.subtitulo {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  color: #79551b;
+
+}
+
+
+.flecha {
+
+  margin-top: 60px;
+
+  font-size: 25px;
+
+  opacity: .55;
+
+  animation:
+    bajar
+    1.5s
+    infinite;
+
+}
+
+
+
+/* ========================================
+   INTRO
+========================================= */
+
+.intro {
+
+  background:
+
+    linear-gradient(
+      180deg,
+      #e6b744,
+      #c88a21
+    );
+
+}
+
+
+.fecha {
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 25px;
+
+  color: #65420c;
+
+}
+
+
+.intro h2 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 48px;
+
+  line-height: 1;
+
+  margin-bottom: 30px;
+
+  color: #4c310c;
+
+}
+
+
+.texto {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 23px;
+
+  line-height: 1.6;
+
+}
+
+
+.texto strong {
+
+  color: #704500;
+
+}
+
+
+
+/* ========================================
+   FOTO
+========================================= */
+
+.seccion-foto {
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      #fff1ac,
+      #e2b348
+    );
+
+}
+
+
+.polaroid {
+
+  position: relative;
+
+  background:
+    #fffaf0;
+
+  padding:
+    15px
+    15px
+    27px;
+
+  box-shadow:
+    0 25px 65px
+    rgba(82, 48, 5, .28);
+
+  transform:
+    rotate(-2deg);
+
+  margin-bottom:
+    65px;
+
+}
+
+
+.cinta {
+
+  position: absolute;
+
+  width: 100px;
+  height: 32px;
+
+  left: 50%;
+  top: -17px;
+
+  transform:
+    translateX(-50%)
+    rotate(3deg);
+
+  background:
+    rgba(220, 184, 89, .65);
+
+  backdrop-filter:
+    blur(2px);
+
+}
+
+
+.foto-vacia {
+
+  aspect-ratio:
+    4 / 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+
+  background:
+
+    linear-gradient(
+      rgba(93, 58, 10, .08),
+      rgba(93, 58, 10, .08)
+    ),
+
+    radial-gradient(
+      circle,
+      #fae9a6,
+      #d2a13d
+    );
+
+}
+
+
+.corazon {
+
+  font-size: 50px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.foto-vacia h3 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  margin-bottom: 10px;
+
+}
+
+
+.foto-vacia p {
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+
+}
+
+
+.nombre-polaroid {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 22px;
+
+  font-style: italic;
+
+  margin-top: 18px;
+
+}
+
+
+.detalle-foto {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.6;
+
+}
+
+
+
+/* ========================================
+   CARTA
+========================================= */
+
+.seccion-carta {
+
+  min-height: auto;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  background:
+    #d29b2d;
+
+}
+
+
+.carta {
+
+  position: relative;
+
+  background:
+    #fffaf0;
+
+  padding:
+    55px
+    30px;
+
+  text-align: left;
+
+  border-radius:
+    5px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(80, 45, 5, .28);
+
+  transform:
+    rotate(.6deg);
+
+}
+
+
+.girasol-carta {
+
+  position: absolute;
+
+  right: 18px;
+  top: -35px;
+
+  font-size: 65px;
+
+  transform:
+    rotate(15deg);
+
+}
+
+
+.carta h2 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 43px;
+
+  margin-bottom: 30px;
+
+}
+
+
+.carta p {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 20px;
+
+  line-height: 1.72;
+
+  margin-bottom: 20px;
+
+}
+
+
+.carta strong {
+
+  color: #a16b09;
+
+}
+
+
+.frase-destacada {
+
+  text-align: center;
+
+  font-size:
+    30px !important;
+
+  font-style:
+    italic;
+
+  padding:
+    15px 0;
+
+  color:
+    #a16b09;
+
+}
+
+
+.firma {
+
+  text-align: right;
+
+  margin-top:
+    40px;
+
+  font-size:
+    23px !important;
+
+  font-style:
+    italic;
+
+}
+
+
+
+/* ========================================
+   FINAL
+========================================= */
+
+.final {
+
+  background:
+
+    radial-gradient(
+      circle at center,
+      #f9df79,
+      #d79b28 75%
+    );
+
+}
+
+
+.ramo {
+
+  font-size: 50px;
+
+  margin-bottom: 35px;
+
+  animation:
+    flotar
+    3s
+    ease-in-out
+    infinite;
+
+}
+
+
+.final h2 {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      44px,
+      13vw,
+      60px
+    );
+
+  line-height: 1;
+
+  color:
+    #4c300a;
+
+  margin-bottom:
+    35px;
+
+}
+
+
+.fecha-final {
+
+  font-size: 11px;
+
+  letter-spacing: 4px;
+
+  color: #735018;
+
+  margin-bottom: 20px;
+
+}
+
+
+.nombres {
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 25px;
+
+  font-style: italic;
+
+}
+
+
+
+/* ========================================
+   GIRASOLES DEL FONDO
+========================================= */
+
+.girasoles-fondo {
+
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 2;
+
+}
+
+
+.girasoles-fondo span {
+
+  position: absolute;
+
+  font-size: 35px;
+
+  opacity: .16;
+
+  animation:
+    girasolFondo
+    8s
+    ease-in-out
+    infinite;
+
+}
+
+
+.girasoles-fondo span:nth-child(1) {
+
+  left: 4%;
+  top: 10%;
+
+}
+
+
+.girasoles-fondo span:nth-child(2) {
+
+  right: 4%;
+  top: 27%;
+
+  animation-delay: 1s;
+
+}
+
+
+.girasoles-fondo span:nth-child(3) {
+
+  left: 5%;
+  top: 47%;
+
+  animation-delay: 2s;
+
+}
+
+
+.girasoles-fondo span:nth-child(4) {
+
+  right: 7%;
+  top: 65%;
+
+  animation-delay: 3s;
+
+}
+
+
+.girasoles-fondo span:nth-child(5) {
+
+  left: 20%;
+  top: 83%;
+
+  animation-delay: 4s;
+
+}
+
+
+.girasoles-fondo span:nth-child(6) {
+
+  right: 20%;
+  top: 7%;
+
+  animation-delay: 5s;
+
+}
+
+
+
+/* ========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes flotar {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(-4deg);
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(-12px)
+      rotate(5deg);
+
+  }
+
+}
+
+
+@keyframes bajar {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(10px);
+
+  }
+
+}
+
+
+@keyframes girasolFondo {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+  }
+
+
+  50% {
+
+    transform:
+      translateY(-25px)
+      rotate(15deg);
+
+  }
+
+}
+
+
+
+/* ========================================
+   PANTALLAS GRANDES
+========================================= */
+
+@media (min-width: 700px) {
+
+  .contenido {
+
+    max-width: 480px;
+
+  }
+
+}
