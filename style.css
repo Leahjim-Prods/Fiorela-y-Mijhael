@@ -1,3 +1,7 @@
+/* ========================================
+   GENERAL
+========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,9 +20,9 @@ body {
 }
 
 
-/* =========================
-   FONDO
-========================= */
+/* ========================================
+   AMBIENTE
+========================================= */
 
 .ambient {
     position: fixed;
@@ -45,9 +49,9 @@ body {
 }
 
 
-/* =========================
-   PORTADA
-========================= */
+/* ========================================
+   HERO
+========================================= */
 
 .hero {
     min-height: 100svh;
@@ -79,66 +83,61 @@ body {
 .heart {
     font-size: 38px;
     margin: 25px 0 18px;
-
     animation: pulse 1.8s infinite;
 }
 
-.hero h1 {
+.hero h1,
+.section-heading h2,
+.counter-section h2,
+.collection h2,
+.ending h2 {
     font-family: "Cormorant Garamond", serif;
-
-    font-size:
-        clamp(
-            62px,
-            18vw,
-            105px
-        );
-
     font-weight: 500;
     line-height: .92;
 }
 
+.hero h1 {
+    font-size: clamp(62px, 18vw, 105px);
+}
+
+em {
+    color: #efb8c2;
+    font-weight: 500;
+}
+
 .hero-copy {
     max-width: 430px;
-
-    margin: 28px auto 18px;
-
     color: #d7c8c4;
-
-    font-size: 14px;
     line-height: 1.8;
+    margin: 28px auto 18px;
+    font-size: 14px;
 }
 
 .since {
     font-size: 10px;
     letter-spacing: 3px;
-
     color: #a9858c;
 }
 
 
-/* =========================
+/* ========================================
    BOTÓN ENTRAR
-========================= */
+========================================= */
 
 .enter {
     margin-top: 45px;
 
-    padding: 15px 24px;
-
     color: #fff;
     text-decoration: none;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, .19);
-
+    border: 1px solid #ffffff30;
     border-radius: 100px;
 
-    background:
-        rgba(255, 255, 255, .05);
+    padding: 15px 24px;
 
-    backdrop-filter:
-        blur(10px);
+    background: #ffffff0c;
+
+    backdrop-filter: blur(10px);
 }
 
 .enter span {
@@ -146,17 +145,24 @@ body {
 }
 
 
-/* =========================
+/* ========================================
+   SECCIONES
+========================================= */
+
+.counter-section,
+.chapters,
+.collection,
+.ending {
+    padding: 95px 22px;
+    position: relative;
+}
+
+
+/* ========================================
    CONTADOR
-========================= */
+========================================= */
 
 .counter-section {
-    position: relative;
-
-    padding:
-        95px
-        22px;
-
     text-align: center;
 
     background:
@@ -166,61 +172,32 @@ body {
         );
 }
 
-.counter-section h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(
-            42px,
-            12vw,
-            62px
-        );
-
-    font-weight: 500;
-
-    line-height: .92;
-
-    margin:
-        18px
-        0
-        38px;
+.counter-section h2,
+.section-heading h2,
+.collection h2,
+.ending h2 {
+    font-size: clamp(42px, 12vw, 62px);
+    margin: 18px 0 38px;
 }
 
 .counter {
     max-width: 520px;
-
     margin: auto;
 
-    padding:
-        30px
-        22px;
+    padding: 30px 22px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, .09);
-
+    border: 1px solid #ffffff17;
     border-radius: 28px;
 
-    background:
-        rgba(255, 255, 255, .03);
+    background: #ffffff08;
 }
 
 .counter-main strong {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size:
-        clamp(
-            80px,
-            25vw,
-            125px
-        );
+    font-size: clamp(80px, 25vw, 125px);
 
     font-weight: 500;
-
     line-height: .8;
 
     color: #f2bec7;
@@ -229,19 +206,16 @@ body {
 .counter-main span {
     display: block;
 
-    margin-top: 14px;
-
     text-transform: uppercase;
 
     letter-spacing: 4px;
 
     font-size: 10px;
 
+    margin-top: 14px;
+
     color: #b9949a;
 }
-
-
-/* HORAS / MINUTOS / SEGUNDOS */
 
 .counter-small {
     display: flex;
@@ -259,9 +233,7 @@ body {
 }
 
 .counter-small strong {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 34px;
 
@@ -297,53 +269,21 @@ body {
 }
 
 
-/* =========================
+/* ========================================
    CAPÍTULOS
-========================= */
+========================================= */
 
 .chapters {
-    position: relative;
-
-    padding:
-        95px
-        22px;
-
     background: #efe5db;
-
     color: #302326;
 }
 
 .section-heading {
     max-width: 600px;
 
-    margin:
-        0
-        auto
-        45px;
+    margin: 0 auto 45px;
 
     text-align: center;
-}
-
-.section-heading h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(
-            42px,
-            12vw,
-            62px
-        );
-
-    font-weight: 500;
-
-    line-height: .92;
-
-    margin:
-        18px
-        0
-        38px;
 }
 
 .chapters .eyebrow {
@@ -352,12 +292,8 @@ body {
 
 .section-heading p:last-child {
     color: #735f63;
-
     line-height: 1.7;
 }
-
-
-/* TARJETAS */
 
 .chapter-grid {
     max-width: 800px;
@@ -368,6 +304,11 @@ body {
 
     gap: 18px;
 }
+
+
+/* ========================================
+   TARJETAS DE CAPÍTULOS
+========================================= */
 
 .chapter {
     min-height: 230px;
@@ -393,9 +334,7 @@ body {
     right: 22px;
     top: 13px;
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 65px;
 
@@ -404,30 +343,25 @@ body {
 
 .chapter small {
     font-size: 9px;
-
     letter-spacing: 3px;
 }
 
 .chapter h3 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 34px;
 
     line-height: 1;
 
-    margin:
-        12px
-        0;
+    margin: 12px 0;
 }
 
 .chapter p {
-    max-width: 460px;
-
     font-size: 13px;
 
     line-height: 1.6;
+
+    max-width: 460px;
 }
 
 .chapter b {
@@ -439,16 +373,19 @@ body {
 }
 
 
-/* CAPÍTULO 01 */
+/* ========================================
+   CAPÍTULO 01
+========================================= */
 
 .beginning {
     background: #28171b;
-
     color: #f9ebec;
 }
 
 
-/* CAPÍTULO 02 */
+/* ========================================
+   CAPÍTULO 02
+========================================= */
 
 .spring {
     background:
@@ -462,12 +399,12 @@ body {
 }
 
 
-/* PRÓXIMO */
+/* ========================================
+   PRÓXIMO CAPÍTULO
+========================================= */
 
 .future {
-    border:
-        1px dashed
-        #a78f8b;
+    border: 1px dashed #a78f8b;
 
     color: #665357;
 
@@ -475,47 +412,18 @@ body {
 }
 
 
-/* =========================
+/* ========================================
    COLECCIÓN
-========================= */
+========================================= */
 
 .collection {
-    position: relative;
-
-    padding:
-        95px
-        22px;
-
     text-align: center;
 
     background: #130d0f;
 }
 
-.collection h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(
-            42px,
-            12vw,
-            62px
-        );
-
-    font-weight: 500;
-
-    line-height: .92;
-
-    max-width: 600px;
-
-    margin:
-        18px
-        auto
-        38px;
-}
-
-.collection > p {
+.collection > p,
+.collection > h2 {
     max-width: 600px;
 
     margin-left: auto;
@@ -523,21 +431,18 @@ body {
 }
 
 
-/* TARJETAS COLECCIÓN */
+/* ========================================
+   TARJETAS DE COLECCIÓN
+========================================= */
 
 .tiles {
     max-width: 800px;
 
-    margin:
-        45px
-        auto
-        0;
+    margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns:
-        1fr
-        1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 12px;
 }
@@ -547,14 +452,11 @@ body {
 
     padding: 22px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, .07);
+    border: 1px solid #ffffff12;
 
     border-radius: 20px;
 
-    background:
-        rgba(255, 255, 255, .025);
+    background: #ffffff06;
 }
 
 .tiles span {
@@ -562,16 +464,11 @@ body {
 }
 
 .tiles h3 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 26px;
 
-    margin:
-        13px
-        0
-        7px;
+    margin: 13px 0 7px;
 }
 
 .tiles p {
@@ -583,16 +480,12 @@ body {
 }
 
 
-/* =========================
+/* ========================================
    FINAL
-========================= */
+========================================= */
 
 .ending {
     min-height: 75svh;
-
-    padding:
-        95px
-        22px;
 
     text-align: center;
 
@@ -613,32 +506,7 @@ body {
 .ending > span {
     font-size: 50px;
 
-    animation:
-        pulse
-        1.8s
-        infinite;
-}
-
-.ending h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size:
-        clamp(
-            42px,
-            12vw,
-            62px
-        );
-
-    font-weight: 500;
-
-    line-height: .92;
-
-    margin:
-        18px
-        0
-        38px;
+    animation: pulse 1.8s infinite;
 }
 
 .ending > p:last-child {
@@ -650,19 +518,16 @@ body {
 }
 
 
-/* =========================
-   ANIMACIONES
-========================= */
+/* ========================================
+   ANIMACIONES AL HACER SCROLL
+========================================= */
 
 .reveal {
     opacity: 0;
 
-    transform:
-        translateY(30px);
+    transform: translateY(30px);
 
-    transition:
-        .9s
-        ease;
+    transition: .9s ease;
 }
 
 .reveal.visible {
@@ -671,82 +536,61 @@ body {
     transform: none;
 }
 
+
+/* ========================================
+   LATIDO
+========================================= */
+
 @keyframes pulse {
 
     50% {
-
-        transform:
-            scale(1.15);
-
+        transform: scale(1.15);
     }
 
 }
 
 
-/* =========================
-   PC / TABLET
-========================= */
+/* ========================================
+   TABLET / PC
+========================================= */
 
 @media (min-width: 720px) {
 
     .chapter-grid {
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        grid-template-columns: 1fr 1fr;
     }
 
     .future {
-
-        grid-column:
-            1 / -1;
-
+        grid-column: 1 / -1;
     }
 
     .tiles {
-
-        grid-template-columns:
-            repeat(
-                4,
-                1fr
-            );
-
+        grid-template-columns: repeat(4, 1fr);
     }
 
 }
 
 
-/* =========================
+/* ========================================
    CELULAR
-========================= */
+========================================= */
 
 @media (max-width: 430px) {
 
     .tiles {
-
-        grid-template-columns:
-            1fr
-            1fr;
-
+        grid-template-columns: 1fr 1fr;
     }
 
     .chapter {
-
         min-height: 250px;
-
     }
 
     .counter-small {
-
         gap: 8px;
-
     }
 
     .counter-small div {
-
         min-width: 55px;
-
     }
 
 }
