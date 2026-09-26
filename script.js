@@ -1,0 +1,4 @@
+const inicio = new Date('2026-09-18T23:00:00-05:00');
+function actualizarContador(){const ahora=new Date();let diff=Math.max(0,ahora-inicio);const d=Math.floor(diff/86400000);diff%=86400000;const h=Math.floor(diff/3600000);diff%=3600000;const m=Math.floor(diff/60000);const s=Math.floor((diff%60000)/1000);document.getElementById('dias').textContent=d;document.getElementById('horas').textContent=String(h).padStart(2,'0');document.getElementById('minutos').textContent=String(m).padStart(2,'0');document.getElementById('segundos').textContent=String(s).padStart(2,'0')}
+actualizarContador();setInterval(actualizarContador,1000);
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
